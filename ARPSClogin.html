@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" />
+<link href="css/ARPSC/default.css" rel="stylesheet" type="text/css" />
+<!-- $Id: ARPSClogin.html,v 1.4 2006-11-27 10:28:22-05 jjmcd Exp jjmcd $ -->
+<title>Login for data maintenance</title>
+</head>
+
+<body>
+
+<script type="javascript">
+function clearCookie()
+{
+  document.cookie="usercode=" + escape("invalid");
+}
+</script>
+
+<div class="header">
+<b>MI-ARPSC FSD-212 Login</b><br />&nbsp;<br />
+Please Log In
+</div>
+
+<div class="login_area">
+
+<form id="login" action="ARPSCmenu.pl" method="post">
+<table class="login_area">
+
+<tr>
+<td align="right">Call:</td>
+<td align="left">
+  <input type="text" name="call" id="call" size="8" />
+</td>
+</tr>
+
+<tr>
+<td align="right">Password:</td>
+<td align="left">
+  <input type="password" name="pwd" id="pwd" size="12" />
+</td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+  <input type="submit" value=" Login " />
+</td>
+</tr>
+
+</table>
+</form>
+
+&nbsp;
+</div>
+
+  <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="http://www.w3.org/Icons/valid-xhtml10"
+        alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+  </p>
+
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <link href="strict.css" rel="stylesheet" type="text/css" />
+  <title>Monthly Reporting Entry</title>
+</head>
+<body>
+<h1>PSHR/SAR/BPL Reporting Entry</h1>
+
+<script>
+function isNotEmpty(elem)
+{
+  var str = elem.value;
+  var re = /.+/;
+  if (!str.match(re)) {
+   alert("Please fill in all required fields.");
+   return false;
+  }
+  else {
+   return true;
+  }
+}
+function numeralsOnly(evt)
+ {
+  evt = (evt) ? evt : event;
+  var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode : ((evt.which) ? evt.which : 0));
+  if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    alert("Enter numerals only in this field");
+    return false;
+   }
+  return true;
+ }
+function validateForm(form) {
+ if (isNotEmpty(form.call)) {
+  if (isNotEmpty(form.city)) {
+   if (isNotEmpty(form.msgnum)) {
+    return true;
+   }
+  }
+ }
+ return false;
+}
+</script>
+
+<form name="getreport" method="get" action="http:PSHR_result.shtml"
+  onsubmit="return validateForm(this)">
+<table width="95%">
+  <tr>
+    <td width=75%>
+      Enter your call sign
+    </td>
+    <td>
+      <input type="text" name="call" value="" size="8">
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Enter the name of your city/village/township (in Michigan)
+    </td>
+    <td>
+      <input type="text" name="city" value="" size="25" onchange="this.value = this..value.toUpperCase()" />
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Enter the message number for this report
+    </td>
+    <td>
+      <input type="text" name="msgnum" value="1" size="3" onkeypress="return numeralsOnly(event)">
+    </td>
+  </tr>
+
+  <tr class="rpt">
+    <td colspan=2>
+      <p>&nbsp;</p>
+      <p>The following questions refer to your activity during the previous month.</p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+
+  <tr class="tfc">
+    <td colspan=2>
+      <p>The next four fields refer to NTS traffic passed during the month.</p>
+      <p>Note that
+      a piece of traffic received and relayed, received and delivered, or originated
+      and transmitted will count in two categories, while a piece you originate on your
+      own behalf, or one addressed to you, will only count as one.</p>
+    </td>
+  </tr>
+  <tr class="tfc">
+    <td>
+      Enter the number of pieces of traffic you originated on behalf of a third party
+    </td>
+    <td>
+      <input type="text" name="orig" value="0" size="3" onkeypress="return numeralsOnly(event)">
+    </td>
+  </tr>
+
+  <tr class="tfc">
+    <td>
+      Enter the number of pieces of traffic you transmitted to another station
+    </td>
+    <td>
+      <input type="text" name="sent" value="0" size="3" onkeypress="return numeralsOnly(event)">
+    </td>
+  </tr>
+
+  <tr class="tfc">
+    <td>
+      Enter the number of pieces of traffic you recieved from another station
+    </td>
+    <td>
+      <input type="text" name="recd" value="0" size="3" onkeypress="return numeralsOnly(event)">
+    </td>
+  </tr>
+
+  <tr class="tfc">
+    <td>
+      Enter the number of pieces of traffic you delivered to a third party
+    </td>
+    <td>
+      <input type="text" name="deld" value="0" size="3" onkeypress="return numeralsOnly(event)">
+    </td>
+  </tr>
+
+  <tr class="rpt">
+    <td>
+      <p>&nbsp;</p>
+      Enter the number of times you checked into a public service or NTS net
+    </td>
+    <td>
+      <input type="text" name="qni" value="0" size="3" onkeypress="return numeralsOnly(event)">
+    </td>
+  </tr>
+
+  <tr class="rpt">
+    <td>
+      Enter the number of section-level appointments you hold
+    </td>
+    <td>
+      <input type="text" name="appts" value="0" size="3" onkeypress="return numeralsOnly(event)">
+    </td>
+  </tr>
+
+  <tr class="rpt">
+    <td>
+      Participation in scheduled, short-term public service events such as
+      walk-a-thons, bike-athons, parades, simulated emergency tests and
+      related practice events. This includes off-the-air meetings and
+      coordination efforts with related emergency groups and served agencies.
+      Enter hours spent in either coordinating and/or operating in the
+      public service event.
+    </td>
+    <td>
+      <input type="text" name="planned" value="0" size="3" onkeypress="return numeralsOnly(event)">
+    </td>
+  </tr>
+
+  <tr class="rpt">
+    <td>
+      Participation in an unplanned emergency response when the Amateur
+      Radio operator is on the scene. This also includes unplanned
+      incident requests by public or served agencies for Amateur Radio
+      participation. Enter hours spent directly involved in the emergency
+      operation.
+    </td>
+    <td>
+      <input type="text" name="unplanned" value="0" size="3" onkeypress="return numeralsOnly(event)">
+    </td>
+  </tr>
+
+  <tr class="rpt">
+    <td>
+      Enter the number of public service or emergency response packet
+      BBSs, websites, email lists, etc. that you maintain
+    </td>
+    <td>
+      <input type="text" name="bbs" value="0" size="3" onkeypress="return numeralsOnly(event)">
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan=2>
+      <center>
+        <input type="submit" name="submit" value="Submit">
+      </center>
+    </td>
+  </tr>
+
+</table>
+<!--#config timefmt="%Y-%m-%d %H:%M" -->
+<p class="rev">Page modified <!--#echo var="LAST_MODIFIED" --></p>
+<div class="i">
+<!--
+  <a href="http://validator.w3.org/check?uri=referer">
+  <img src="http://www.w3.org/Icons/valid-xhtml10"
+    alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+-->
+</div>
+</body>
+</html>

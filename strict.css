@@ -1,0 +1,157 @@
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12pt;
+	background-color: #b0c4de;
+	color: #191970;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+}
+
+p.rev {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	background-color: #b0c4de;
+	color: #5f9ea0;
+}
+
+div.out {
+	background-color: #e0ffff;
+	color: #000000;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-style: solid;
+	padding-bottom: 10pt;
+}
+
+div.msg {
+	background-color: #ffffdd;
+	color: #000000;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-style: solid;
+	padding-bottom: 10pt;
+	padding-left: 10pt;
+}
+
+div.ddes {
+	background-color: #e0ffff;
+	color: #000000;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+div.linx {
+	font-weight: 600;
+	text-align: center;
+}
+
+a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	background-color: inherit;
+	color: #a52a2a;
+	text-decoration: none;
+}
+
+a:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	background-color: inherit;
+	color: #ff6347;
+	text-decoration: underline;
+}
+
+.notes {
+	padding-left: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #6495ed;
+}
+
+H1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 24pt;
+	font-weight: 800;
+	background-color: #b0c4de;
+	color: #000000;
+	text-align: center;
+}
+
+H2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 20pt;
+	font-weight: 800;
+	background-color: #b0c4de;
+	color: #0000cd;
+	text-align: center;
+}
+
+table {
+	background-color: #add8e6;
+	color: #191970;
+	border-style: solid;
+	border-color: #191970;
+	border-width: thick;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+table.doc {
+	position: relative;
+	width: 60%;
+	background-color: #add8e6;
+	color: #191970;
+	font-size: 10pt;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #4682b4;
+	left: 15%;
+}
+table.reps { background-color:#ffffff }
+tr.county { background-color:#ddeedd }
+tr.rpt { background-color:#bbeeff }
+tr.tfc { background-color:#cceeff }
+tr.al1 { background-color:#eeeecc }
+tr.al2 { background-color:#ffffdd }
+td {
+	color: #000080;
+	background-color: inherit;
+	padding-left: 3%;
+	padding-right: 3%;
+}
+
+td.doc {
+	text-align: left;
+}
+td.phone { background-color:inherit;font-size:10pt;padding:0 }
+td.email { background-color:inherit;font-size:10pt;padding:0;color:#000000 }
+td.ips { background-color:inherit;color:#000000;padding:0 }
+
+th {
+	background-color: inherit;
+	color: #191970;
+}
+
+th.doc {
+	text-align: right;
+}
+
+.size {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	background-color: inherit;
+	color: #808080;
+}
+
+div.i {
+	position: fixed;
+	right: 20px;
+}
+
+img {
+	border: none;
+}

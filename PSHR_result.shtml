@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <link href="strict.css" rel="stylesheet" type="text/css" />
+  <title>Reporting Result</title>
+</head>
+<body>
+<h1>Reporting Result</h1>
+<!--#exec cgi="PSHR_result.pl" -->
+
+<!--#config timefmt="%Y-%m-%d %H:%M" -->
+<p class="rev">Page modified <!--#echo var="LAST_MODIFIED" --></p>
+<div class="i">
+<!--
+  <a href="http://validator.w3.org/check?uri=referer">
+  <img src="http://www.w3.org/Icons/valid-xhtml10"
+    alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+-->
+</div>
+</body>
+</html>

@@ -1,0 +1,267 @@
+h1, p { margin: 3px 6px; }
+
+#container { width: 900px; border: solid 1px; font-family: Verdana, Arial, Helvetica, sans-serif; margin: 0px 0px; padding: 0px;}
+
+#masthead
+  {
+    background: #69c;
+    padding: 0px 15px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+  }
+
+#masthead img
+  {
+    border: 0;
+  }
+
+#masthead tr
+  {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+#navbar
+  {
+    width: 199px;
+    float: left;
+    background: #dddddd;
+    font-size: 14px;
+  }
+
+#navbar li
+  {
+    font-size: 12px;
+  }
+
+#main
+  {
+    float: left;
+    width: 500px;
+    font-size: 14px;
+  }
+
+#main p
+  {
+    margin: 12px 6px;
+  }
+
+#main p.textbody
+  {
+    color: #004;
+  }
+
+#main p.author
+  {
+    color: #9f9f9f;
+  }
+
+#main h1
+  {
+    font-size: 24px;
+    color: #7f7f7f;
+  }
+
+#main table
+  {
+      background: #acd;
+  }
+
+#main th
+  {
+    font-size: 12px;
+    background: #eef;
+  }
+
+//#main td
+//  {
+//    font-size: 10px;
+//    background: #def;
+//  }
+
+#main tr.OsRow
+  {
+    background-color: #ffffff;
+    font-color: #8f8f8f;
+  }
+
+#submitted 
+  {
+    font-color: #4fff4f;
+  }
+
+p.author 
+  {
+    font-color: #ff4f4f;
+  }
+
+a.month
+  {
+    font-size: 8px;
+    background: #cceeee;
+  }
+
+#staff
+  {
+    float: left;
+    width: 199px;
+    background: #dddddd;
+    color: #4f4f4f;
+    font-size: 12px;
+  }
+
+#staff p
+  {
+    margin: 12px 6px;
+  }
+
+#footer
+  {
+    clear: both;
+    padding: 15px;
+    background: #eeeeee;
+    font-size: 10px;
+    color: #7f7f7f;
+  }
+
+#footer td
+  {
+    color: #008;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Times, Roman, Serif;
+  }
+
+h2.title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #6f6f6f;
+    margin: 6px;
+}
+
+A {
+	FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #39c
+}
+A:visited {
+	COLOR: #369
+}
+.site-name {
+    font-size: 20pt;
+}
+.site-name a:link {
+	COLOR: #ffffff
+}
+.site-name A:visited {
+    COLOR: #ffffff
+}
+.site-slogan {
+    font-size: 12pt;
+    font-weight: bold;
+    font-style: italic;
+    color: #eeeeee;
+    margin: 0px 6px;
+}
+A:hover {
+    COLOR: #ff8; TEXT-DECORATION: underline; background-color: #007;
+}
+
+
+.OsRow {
+      font-size: 9pt;
+	background-color: #234567;
+	color: #8FFFFF;
+}
+.OsRowL {
+	color: #FFFFaf;
+      font-size: 9pt;
+}
+.OsRowL:hover {
+	color: #FFFF00;
+	text-degoration=underline
+}
+.OsRow2 {
+      font-size: 9pt;
+	background-color: #3d6086;
+	color: #FFFFFF;
+}
+.OsRow3 {
+      font-size: 9pt;
+	background-color: #eff;
+	color: #000;
+}
+.OsRow4 {
+      font-size: 9pt;
+	background-color: #fff;
+	color: #00c;
+}
+#OsRow {
+	background-color: #eff;
+}
+
+#OsRow2 {
+	background-color: #fff;
+}
+
+#OsRow3 {
+      font-size: 9pt;
+	background-color: #eff;
+	color: #000;
+}
+
+#OsRow4 {
+      font-size: 9pt;
+	background-color: #fff;
+	color: #000;
+}
+
+#OsRow5 {
+      font-size: 12px;
+	background-color: #eff;
+	color: #000;
+}
+
+#OsRow6 {
+      font-size: 12px;
+	background-color: #fff;
+	color: #000;
+}
+
+#main td.OsRow2 {
+      font-size: 9pt;
+	background-color: #3d6086;
+	color: #ffff;
+}
+
+#navbar ul
+  {
+    margin: 0px 18px;
+    BORDER-TOP-STYLE: none;
+    BORDER-RIGHT-STYLE: none;
+    BORDER-LEFT-STYLE: none;
+    LIST-STYLE-TYPE: disc;
+    TEXT-ALIGN: left;
+    BORDER-BOTTOM-STYLE: none
+  }
+
+UL.menu {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; LIST-STYLE-TYPE: none; TEXT-ALIGN: left; BORDER-BOTTOM-STYLE: none
+}
+//UL.menu LI {
+//	MARGIN: 0px 0px 0px 0.5em
+//}
+//LI.expanded {
+//	PADDING-RIGHT: 0.5em; PADDING-LEFT: 0px; LIST-STYLE-IMAGE: url(menu-expanded.png); //PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0.2em; LIST-STYLE-TYPE: circle
+//}
+//LI.collapsed {
+//	PADDING-RIGHT: 0.5em; PADDING-LEFT: 0px; LIST-STYLE-IMAGE: url(menu-collapsed.png); //PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0.2em; LIST-STYLE-TYPE: disc
+//}
+//LI.leaf {
+//	PADDING-RIGHT: 0.5em; PADDING-LEFT: 0px; LIST-STYLE-IMAGE: url(menu-leaf.png); //PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0.2em; LIST-STYLE-TYPE: square
+//}
+//LI A.active {
+//	COLOR: #000
+//}
+
