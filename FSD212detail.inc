@@ -11,7 +11,7 @@
 //==============================================================================
 
 $q1='SELECT `districtkey`, `district_code` from `arpsc_districts`' .
-'	     ORDER BY `district_code`';
+    'ORDER BY `district_code`';
 $r1=getResult($q1,$db);
 
 $olddistrict=0;
@@ -24,8 +24,8 @@ $lh=11.8;
 while ( $row1 = getRow($r1,$db) )
   {
     $district=$row1[1];
-    $q2="SELECT `countyname`, `countycode` FROM `arpsc_counties` ' .
-      'WHERE `district`='" .
+    $q2="SELECT `countyname`, `countycode` FROM `arpsc_counties` " .
+      "WHERE `district`='" .
       $district . "' ORDER BY `countyname`";
     $r2=getResult($q2,$db);
     if ( $district < ":" )
@@ -143,7 +143,7 @@ while ( $row1 = getRow($r1,$db) )
 		    $pdf->addText($Left_Margin+190,$YPos, 10,
 		       " - - - - - - - - included with Ogemaw - - - - - - - -");
 		  }
-		else if ( $row2[0]=='Clare' )
+		else if ( ($row2[0]=='Clare') && ($period < 124) )
 		  {
 		    if ( $district != $olddistrict )
 		      {
