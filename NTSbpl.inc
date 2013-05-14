@@ -13,6 +13,7 @@
 		    16,"Brass Pounder's League",'center');
 
   $YPos -= 20;
+  $numReports = 0;
 
   // Get the actual report data for this period
   $SQL='SELECT `call`,`orig`,`sent`,`recd`,`deld`,`total`,' .
@@ -91,7 +92,15 @@
 
       //**echo "\n";
       ////**echo "  </TR>\n";
+      $numReports++;
     }
+    if ( $numReports == 0 )
+    {
+        $YPos -= 12;
+	$pdf->addTextWrap($XP[2],$YPos,250,10,"No BPL reports this month",'left');
+    	$YPos -= 12;
+    }
+
   ////**echo "</TABLE>\n";
   //**echo "\n\n\"Brass Pounder's League for " . $usedate . '"' . "\n\n";
   //**echo "Call,Orig,Sent,Rec'd,Del'd,Total\n\n\n\n";

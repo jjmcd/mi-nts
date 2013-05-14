@@ -1,0 +1,78 @@
+I don't have a line on any off the shelf FOSS applications, although I
+bet there is something out there.  I use a PHP script to generate a
+monthly report as a PDF.  
+
+I use a PDF class for PHP but it appears it has been updated since I
+downloaded it many moons ago.  It looks to be at http://ros.co.nz/pdf/
+but mine relies on fpdf, which also seems to be around, but it looks
+like the current version doesn't.  So my examples might not be all
+that useful.
+
+I was going to include the stuff I use but the zip is a bit large for
+this list.  Besides the actual class there are a few fonts which take
+plenty of space.
+
+I've attached a sample which I've hacked up some.  I use this monthly
+to generate a report.  I've taken important bits from the include
+files and pasted them into it, and left out uninteresting functions.
+
+Basically, you connect to a database by something like
+
+$db = mysql_connect($host , $dbuser, $dbpassword);
+mysql_select_db($DatabaseName,$db);
+
+Generally, you want to read the password from a file outside the web
+server's reach.
+
+Then you do queries by something like
+
+
+    $query="SELECT MAX(`period`) FROM `arpsc_ecrept`";
+    $result = mysql_query($query,$db);
+    $period = mysql_fetch_row($result,$db);
+
+if you are only returning a single scalar from the database, or more like
+
+    $query="`id`,`name` FROM `people`";
+    $result = mysql_query($query,$db);
+    while ( $row = mysql_fetch_row($result,$db)
+    {
+      echo $row[0] . "\t" . $row[1] . "\n";
+    }
+
+if you are fetching multiple rows.  Obviously, there is error checking
+you may want to do; I tend to wrap that in my own functions.
+
+For the PDF
+
+  $PageSize = array(0,0,$Page_Width,$Page_Height);
+  $pdf = & new Cpdf($PageSize);
+  $pdf->SetTextColor(0,0,0);
+  $pdf->selectFont('helvetica-Bold');
+  $FontSize=18;
+  $pdf->addText($XPos,$YPos,$FontSize,_('blah, blah, blah'));
+
+then
+
+  $buf = $pdf->output();
+  $len += strlen($buf);
+
+  header('Content-type: application/pdf');
+  header('Content-Length: ' . $len);
+  header('Content-Disposition: inline; filename=' . $DateShort . '-rpt.pdf');
+  header('Expires: 0');
+  header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+  header('Pragma: public');
+
+  $pdf->stream()
+
+?>
+
+Yeah, all the text positioning can get kinda grody, but it does work.
+The example has functions for a new page, header, etc.
+
+Hope that helps.
+
+--McD
+
+

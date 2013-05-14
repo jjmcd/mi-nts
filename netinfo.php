@@ -36,7 +36,7 @@
 	'`days2`,`time2`,`freq2`,`comments`,`updated`' .
 	' FROM nets' .
 	' WHERE nethf=1 AND netaffil=1' .
-	' ORDER BY time1';
+	' ORDER BY time1, freq1';
     Show_Nets($db,$SQL);
 
     echo	'<h3>VHF Nets</h3>' . "\n";

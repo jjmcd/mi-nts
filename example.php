@@ -72,10 +72,6 @@ function centerText($pdf,$l,$r,$y,$fs,$text)
 {
   $slen=$pdf->GetStringWidth($text);
   $XPos = round(($l+$r)/2 - $slen/2 );
-  //$msg = 'Len ' . $slen . ', y=' . $y . ', text=' . $text;
-  //$pdf->addText(200,300,10,$msg);
-  //$msg = 'l,r=' . $l . ',' . $r . ', Pos ' . $XPos;
-  //$pdf->addText(200,340,10,$msg);
   $pdf->addText($XPos,$y,$fs,$text);
 }
 
@@ -158,6 +154,39 @@ function Header212($pdf,$Page_Width,$Left_Margin,$Right_Margin,$Yloc)
 include('includes/session.inc');
 $title=_('Michigan Section FSD-212');
 
+// Return a result set from the database
+function getResult( $SQL, $db )
+{
+    $result = mysql_query($SQL,$db);
+    if (mysql_errno($db) != 0 )
+    {
+        prnMsg($ErrorMessage.'<BR>' . mysql_error($db),'query error', _('Databa
+se Error'));
+        return '';
+    }
+    return $result;
+}
+
+// Return a row from the selected result set
+function getRow($result,$db)
+{
+    $myrow = mysql_fetch_row($result);
+    if (mysql_errno($db) != 0 )
+    {
+        prnMsg($ErrorMessage.'<BR>' . mysql_error($db),'fetch error', _('Database Error'));
+    }
+    return $myrow;
+}
+
+// Return a single result from the database
+function singleResult($SQL,$db)
+{
+    $result = getResult($SQL,$db);
+    $myrow = getRow($result,$db);
+    return $myrow[0];
+}
+
+
 include('includes/functions.inc');
 
 // Remember the launch time
@@ -185,7 +214,6 @@ $Month = convertDate($usedate);
 $yr=substr($usedate,2,2);
 $mn=substr($usedate,5,2);
 $DateShort=$yr . $mn;
-//$DateShort=convertDateShort($usedate);
 
 $PaperSize = 'letter';
 $Page_Width=612;
@@ -211,22 +239,10 @@ $pdf->SetLineWidth( 2 );
 $YPos = $Page_Height-$Top_Margin-70;
 $pdf->Line( $Left_Margin, $YPos, $Page_Width-$Left_Margin-$Right_Margin,$YPos);
 
-$YPos -= 30;
-/*
-$msg = "ARRL Section: Michigan        Month: " . $Month . "                  ";
-centerText($pdf,$Left_Margin,$Page_Width-$Right_Margin-$Left_Margin,
-	   $YPos,12,$msg);
-*/
+
 $YPos -= 25;
 $pdf->Line( $Left_Margin, $YPos, $Page_Width-$Left_Margin-$Right_Margin,$YPos);
 
-$YPos -= 30;
-/*
-$msg = "AMATEUR RADIO EMERGENCY SERVICE";
-$pdf->SelectFont("helvetica-Bold");
-centerText($pdf,$Left_Margin,$Page_Width-$Right_Margin-$Left_Margin,
-	   $YPos,12,$msg);
-*/
 $YPos -= 25;
 $pdf->Line( $Left_Margin, $YPos, $Page_Width-$Left_Margin-$Right_Margin,$YPos);
 
@@ -234,70 +250,10 @@ $StartY = $YPos - 40;
 $XPos = $Left_Margin + 10;
 $pdf->SelectFont("helvetica");
 $FontSize = 10;
-/*
-$YPos = $StartY;
-$pdf->addText($XPos,$YPos,$FontSize,"Total number of ARES members");
-$YPos -= 14;
-$pdf->addText($XPos,$YPos,$FontSize,"# ECs reporting");
-$YPos -= 14;
-$pdf->addText($XPos,$YPos,$FontSize,"Drills, tests and training sessions");
-$YPos -= 14;
-$pdf->addText($XPos,$YPos,$FontSize,"Public Service Events");
-$YPos -= 14;
-$pdf->addText($XPos,$YPos,$FontSize,"Emergency Operations");
-$YPos -= 14;
-$pdf->addText($XPos,$YPos,$FontSize,"Total number of ARES ops");
-
-$YPos = $StartY;
-$XPos = $Page_Width/2;
-$pdf->addText($XPos,$YPos,$FontSize,"Change since last month");
-$YPos -= 14;
-$pdf->addText($XPos,$YPos,$FontSize,"# ARES nets");
-$YPos -= 14;
-$pdf->addText($XPos,$YPos,$FontSize,"Person hours");
-$YPos -= 14;
-$pdf->addText($XPos,$YPos,$FontSize,"Person hours");
-$YPos -= 14;
-$pdf->addText($XPos,$YPos,$FontSize,"Person hours");
-$YPos -= 14;
-$pdf->addText($XPos,$YPos,$FontSize,"Person hours");
-*/
 
 // Go get the data
 include ('FSD96data.inc');
 
-// Display the data
-/*$X1 = $Page_Width/2 -60;
-$X2 = $Page_Width/2 -20;
-$YPos = $StartY;
-centerText($pdf,$X1,$X2,$YPos,$FontSize, $garesmem );
-$YPos -= 14;
-centerText($pdf,$X1,$X2,$YPos,$FontSize, $numecs );
-$YPos -= 14;
-centerText($pdf,$X1,$X2,$YPos,$FontSize, $gnetsess );
-$YPos -= 14;
-centerText($pdf,$X1,$X2,$YPos,$FontSize, $gpsnum );
-$YPos -= 14;
-centerText($pdf,$X1,$X2,$YPos,$FontSize, $gemnum );
-$YPos -= 14;
-centerText($pdf,$X1,$X2,$YPos,$FontSize, round($gnetsess+$gpsnum+$gemnum) );
-*/
-/*
-$X1 = $Page_Width - $Right_Margin -60;
-$X2 = $Page_Width - $Right_Margin -20;
-$YPos = $StartY;
-centerText($pdf,$X1,$X2,$YPos,$FontSize, $gareschg );
-$YPos -= 14;
-centerText($pdf,$X1,$X2,$YPos,$FontSize, $numnets );
-$YPos -= 14;
-centerText($pdf,$X1,$X2,$YPos,$FontSize, round($gnethrs) );
-$YPos -= 14;
-centerText($pdf,$X1,$X2,$YPos,$FontSize, round($gpshrs) );
-$YPos -= 14;
-centerText($pdf,$X1,$X2,$YPos,$FontSize, round($gemhrs) );
-$YPos -= 14;
-centerText($pdf,$X1,$X2,$YPos,$FontSize, round($gmanhrs) );
-*/
 
 
 //==============================================================================
@@ -339,34 +295,19 @@ include('NTSpshr.inc');
 include('NTSbpl.inc');
 
 
-//-- $pdf->SetFillColor(255,255,192);
-//-- $pdf->Rect($Left_Margin,300,$Page_Width-$Left_Margin-$Right_Margin,25,'F');
-//-- $pdf->SetFillColor(192,255,192);
-//-- $pdf->Rect(300,325,100,25,'F');
-
-//-- $FontSize = 12;
-//-- $pdf->SetTextColor(0,64,128);
-//-- $pdf->addTextWrap($Left_Margin+65,600,300,$FontSize,'String of Text', 'left');
-
-//-- $pdf->SetTextColor(0,128,64);
-//-- $pdf->addTextWrap($Left_Margin+65,500,150,$FontSize,'Another String of Text', 'left');
-
-//-- $pdf->SetTextColor(64,0,128);
-//-- $pdf->addTextWrap($Left_Margin+65,400,200,$FontSize,'This text on page 5', 'left');
 
 
 $FontSize = 8;
 $pdf->SetTextColor(128,128,128);
-//$XPos = $Page_Width - $Right_Margin - 60;
 $XPos = $Left_Margin + 3;
 $YPos = $Bottom_Margin + 34;
-$pdf->addText($XPos,$YPos,$FontSize,"Requested: " . $starttime . "Z");
+$pdf->addText($XPos,$YPos,$FontSize,"Requested: " . $starttime . "E");
 $YPos -= 10;
 $pdf->addText($XPos,$YPos,$FontSize,"Most recent data: " . $maxdate . "E");
 $YPos -= 10;
-$pdf->addText($XPos,$YPos,$FontSize,"\$Revision: 1.3 $ - \$Date: 2013-03-15 10:22:50-04 \$");
+$pdf->addText($XPos,$YPos,$FontSize,"\$Revision: 1.2 $ - \$Date: 2011-02-14 08:06:00-05 \$");
 $YPos -= 10;
-$pdf->addText($XPos,$YPos,$FontSize,"copyright (c) 2013, Michigan Section, American Radio Relay League");
+$pdf->addText($XPos,$YPos,$FontSize,"copyright (c) 2011, Michigan Section, American Radio Relay League");
 
 
 $buf = $pdf->output();

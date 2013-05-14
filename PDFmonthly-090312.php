@@ -212,21 +212,17 @@ $YPos = $Page_Height-$Top_Margin-70;
 $pdf->Line( $Left_Margin, $YPos, $Page_Width-$Left_Margin-$Right_Margin,$YPos);
 
 $YPos -= 30;
-/*
 $msg = "ARRL Section: Michigan        Month: " . $Month . "                  ";
 centerText($pdf,$Left_Margin,$Page_Width-$Right_Margin-$Left_Margin,
 	   $YPos,12,$msg);
-*/
 $YPos -= 25;
 $pdf->Line( $Left_Margin, $YPos, $Page_Width-$Left_Margin-$Right_Margin,$YPos);
 
 $YPos -= 30;
-/*
 $msg = "AMATEUR RADIO EMERGENCY SERVICE";
 $pdf->SelectFont("helvetica-Bold");
 centerText($pdf,$Left_Margin,$Page_Width-$Right_Margin-$Left_Margin,
 	   $YPos,12,$msg);
-*/
 $YPos -= 25;
 $pdf->Line( $Left_Margin, $YPos, $Page_Width-$Left_Margin-$Right_Margin,$YPos);
 
@@ -234,7 +230,7 @@ $StartY = $YPos - 40;
 $XPos = $Left_Margin + 10;
 $pdf->SelectFont("helvetica");
 $FontSize = 10;
-/*
+
 $YPos = $StartY;
 $pdf->addText($XPos,$YPos,$FontSize,"Total number of ARES members");
 $YPos -= 14;
@@ -261,13 +257,13 @@ $YPos -= 14;
 $pdf->addText($XPos,$YPos,$FontSize,"Person hours");
 $YPos -= 14;
 $pdf->addText($XPos,$YPos,$FontSize,"Person hours");
-*/
+
 
 // Go get the data
 include ('FSD96data.inc');
 
 // Display the data
-/*$X1 = $Page_Width/2 -60;
+$X1 = $Page_Width/2 -60;
 $X2 = $Page_Width/2 -20;
 $YPos = $StartY;
 centerText($pdf,$X1,$X2,$YPos,$FontSize, $garesmem );
@@ -281,8 +277,7 @@ $YPos -= 14;
 centerText($pdf,$X1,$X2,$YPos,$FontSize, $gemnum );
 $YPos -= 14;
 centerText($pdf,$X1,$X2,$YPos,$FontSize, round($gnetsess+$gpsnum+$gemnum) );
-*/
-/*
+
 $X1 = $Page_Width - $Right_Margin -60;
 $X2 = $Page_Width - $Right_Margin -20;
 $YPos = $StartY;
@@ -297,7 +292,7 @@ $YPos -= 14;
 centerText($pdf,$X1,$X2,$YPos,$FontSize, round($gemhrs) );
 $YPos -= 14;
 centerText($pdf,$X1,$X2,$YPos,$FontSize, round($gmanhrs) );
-*/
+
 
 
 //==============================================================================
@@ -364,9 +359,9 @@ $pdf->addText($XPos,$YPos,$FontSize,"Requested: " . $starttime . "Z");
 $YPos -= 10;
 $pdf->addText($XPos,$YPos,$FontSize,"Most recent data: " . $maxdate . "E");
 $YPos -= 10;
-$pdf->addText($XPos,$YPos,$FontSize,"\$Revision: 1.3 $ - \$Date: 2013-03-15 10:22:50-04 \$");
+$pdf->addText($XPos,$YPos,$FontSize,"\$Revision: 1.1 $ - \$Date: 2009-03-11 20:06:00-05 \$");
 $YPos -= 10;
-$pdf->addText($XPos,$YPos,$FontSize,"copyright (c) 2013, Michigan Section, American Radio Relay League");
+$pdf->addText($XPos,$YPos,$FontSize,"copyright (c) 2009, Michigan Section, American Radio Relay League");
 
 
 $buf = $pdf->output();

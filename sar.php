@@ -38,7 +38,7 @@
     if ( $period < 1 )
     {
 	$SQL="SELECT MAX(period) FROM sar";
-	$period = singleResult($SQL,$db);;
+	$period = singleResult($SQL,$db);
     }
  
     echo "    <center>\n";
@@ -93,7 +93,8 @@
 
     echo "<P>\n";
     dateLinks($period,"sar",$db);
-    echo "</center>\n";?>
+    echo "</center>\n";
+?>
   </div>
 <?php
     sectLeaders($db);

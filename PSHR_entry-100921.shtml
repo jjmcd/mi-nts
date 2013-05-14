@@ -43,7 +43,7 @@ function validateForm(form) {
 }
 </script>
 
-<form name="getreport" method="get" action="http:PSHR_result.php"
+<form name="getreport" method="get" action="http:PSHR_result.shtml"
   onsubmit="return validateForm(this)">
 <table width="95%">
   <tr>

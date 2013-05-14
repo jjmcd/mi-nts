@@ -1,0 +1,5 @@
+Options ExecCGI +Includes
+IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+Options ExecCGI +Includes +Indexes
+php_flag register_globals off
+AddHandler cgi-script .pl .cgi

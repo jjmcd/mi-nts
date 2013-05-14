@@ -1,8 +1,8 @@
 <?php
 //    FSD212detail.inc
-//    $Revision: 1.1 $ - $Date: 2009-11-22 16:08:00-05 $
+//    $Revision: 1.2 $ - $Date: 2011-04-12 08:08:00-05 $
 //
-//    Add FSD212 details to the monthly PDF report
+//    Separate Ogemaw and Arenac
 //
 
 
@@ -48,6 +48,12 @@ while ( $row1 = getRow($r1,$db) )
 		$hours = $row3[2]+$row3[4]+$row3[6]+$row3[8];
 		$value = $hours * 18.11;
 		$lastperiod = $period-1;
+		$qb="SELECT MAX(`PERIOD`) FROM `arpsc_ecrept` WHERE `county`='"
+		 . $row2[1] . "' AND `PERIOD`<" . $period;
+		$rb=getResult($qb,$db);
+		//$lastperiod=$rb;
+		$rob=getRow($rb,$db);
+		$lastperiod=$rob[0];
 		$q4="SELECT `aresmem` FROM `arpsc_ecrept` WHERE `county`='" . 
 		  $row2[1] . 
 		  "' AND `period`=" . $lastperiod;
@@ -116,7 +122,7 @@ while ( $row1 = getRow($r1,$db) )
 	      }
 	    else
 	      {
-		if ( $row2[0]=='Arenac' )
+/*		if ( $row2[0]=='Arenac' )
 		  {
 		    if ( $district != $olddistrict )
 		      {
@@ -178,7 +184,7 @@ while ( $row1 = getRow($r1,$db) )
 		    $pdf->addText($Left_Margin+190,$YPos, 10,
 		      "- - - - - - - - included with Isabella - - - - - - - -");
 		  }
-		else
+		else */
 		  {
 		    if ( $district != $olddistrict )
 		      {

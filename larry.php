@@ -118,6 +118,8 @@
 	}
     echo ".    </P>\n";
 
+    echo "<p><b>WARNING: </b>Net data presented two different ways,<br/>\n";
+    echo "by net acronym and net full name.</p>\n";
 
     // Get the actual report data for this period
     $SQL='SELECT `netid`,`qtc`,`updated` FROM `netreport` WHERE `period`='
@@ -175,7 +177,7 @@
 
     echo "<div id=\"footer\">\n";
     footer($starttime,$maxdate,
-	   "\$Revision: 1.3 $ - \$Date: 2011-02-13 15:14:52-05 $");
+	   "\$Revision: 1.0 $ - \$Date: 2013-03-15 13:27:48-04 $");
     echo "</div>\n";
 }
 ?>

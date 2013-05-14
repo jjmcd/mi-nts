@@ -57,6 +57,12 @@ while ( $row1 = getRow($r1,$db) )
 	    $hours = $row3[2]+$row3[4]+$row3[6]+$row3[8];
 	    $value = $hours * 18.11;
 	    $lastperiod = $period-1;
+		$qb="SELECT MAX(`PERIOD`) FROM `arpsc_ecrept` WHERE `county`='"
+		 . $row2[1] . "' AND `PERIOD`<" . $period;
+		$rb=getResult($qb,$db);
+		//$lastperiod=$rb;
+		$rob=getRow($rb,$db);
+		$lastperiod=$rob[0];
 	    $q4="SELECT `aresmem` FROM `arpsc_ecrept` WHERE `county`='" . $row2[1] . 
 	      "' AND `period`=" . $lastperiod;
 	    $r4=getResult($q4,$db);

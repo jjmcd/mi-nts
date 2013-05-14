@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Reporting Result</h1>
-<!--#exec cgi="PSHR_result.pl" -->
+<!--#exec cgi="PSHR_result.php" -->
 
 <!--#config timefmt="%Y-%m-%d %H:%M" -->
 <p class="rev">Page modified <!--#echo var="LAST_MODIFIED" --></p>

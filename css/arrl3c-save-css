@@ -1,13 +1,10 @@
 h1, p { margin: 3px 6px; }
 
-#container { width: 904px; border: solid 1px; font-family: Verdana, Arial, Helvetica, sans-serif; margin: 0px 0px; padding: 0px;background-color: #111111; }
-
-
-td { color: cadetblue; }
+#container { width: 900px; border: solid 1px; font-family: Verdana, Arial, Helvetica, sans-serif; margin: 0px 0px; padding: 0px;background-color: #eeeeee; }
 
 #masthead
   {
-    background: #258;
+    background: #69c;
     padding: 0px 15px;
     font-family: Verdana, Arial, Helvetica, sans-serif;
   }
@@ -28,7 +25,7 @@ td { color: cadetblue; }
   {
     width: 199px;
     float: left;
-    background: #222222;
+    background: #dddddd;
     font-size: 14px;
   }
 
@@ -36,7 +33,7 @@ td { color: cadetblue; }
   {
     width: 100px;
     float: left;
-    background: #440000;
+    background: #ffffff;
     font-size: 14px;
   }
 
@@ -50,10 +47,8 @@ td { color: cadetblue; }
     float: left;
     width: 500px;
     font-size: 14px;
-    color: white;
-    background-color: black;
-    border: solid 1px;
-    border-color: #245;
+    color: black;
+    background-color: white;
   }
 
 #main p
@@ -63,7 +58,7 @@ td { color: cadetblue; }
 
 #main p.textbody
   {
-    color: #ccf;
+    color: #004;
   }
 
 #main p.author
@@ -74,18 +69,18 @@ td { color: cadetblue; }
 #main h1
   {
     font-size: 24px;
-    color: #bbbbff;
+    color: #7f7f7f;
   }
 
 #main table
   {
-      background: #467;
+      background: #acd;
   }
 
 #main th
   {
     font-size: 12px;
-    background: #245;
+    background: #eef;
   }
 
 #main pre
@@ -102,7 +97,7 @@ td { color: cadetblue; }
 
 #main tr.OsRow
   {
-    background-color: #ffff00;
+    background-color: #ffffff;
     font-color: #8f8f8f;
   }
 
@@ -119,15 +114,15 @@ p.author
 a.month
   {
     font-size: 10px;
-    background: #444444;
+    background: #eeffff;
   }
 
 #staff
   {
     float: left;
     width: 199px;
-    background: #111111;
-    color: #8ac;
+    background: #dddddd;
+    color: #4f4f4f;
     font-size: 12px;
   }
 
@@ -140,7 +135,7 @@ a.month
   {
     clear: both;
     padding: 15px;
-    background: #111111;
+    background: #eeeeee;
     font-size: 10px;
     color: #7f7f7f;
   }
@@ -156,7 +151,7 @@ a.month
 h2.title {
     font-size: 14px;
     font-weight: bold;
-    color: #9df;
+    color: #6f6f6f;
     margin: 6px;
 }
 
@@ -164,7 +159,7 @@ A {
 	FONT-WEIGHT: bold; TEXT-DECORATION: none
 }
 A:link {
-	COLOR: #06f
+	COLOR: #049
 }
 A:visited {
 	COLOR: #39c
@@ -205,49 +200,49 @@ A:hover {
 }
 .OsRow2 {
       font-size: 9pt;
-	background-color: #0f0;
+	background-color: #3d6086;
 	color: #FFFFFF;
 }
 .OsRow3 {
       font-size: 9pt;
-	background-color: #00f;
+	background-color: #eff;
 	color: #000;
 }
 .OsRow4 {
       font-size: 9pt;
-	background-color: #f00;
-	color: #9cf;
+	background-color: #fff;
+	color: #00c;
 }
 #OsRow {
-	background-color: #0ff;
+	background-color: #eff;
 }
 
 #OsRow2 {
-	background-color: #f0f;
+	background-color: #fff;
 }
 
 #OsRow3 {
       font-size: 9pt;
-	background-color: #000;
-	color: #ddd;
+	background-color: #eff;
+	color: #000;
 }
 
 #OsRow4 {
       font-size: 9pt;
-	background-color: #234;
-	color: #fff;
+	background-color: #fff;
+	color: #000;
 }
 
 #OsRow5 {
       font-size: 12px;
-	background-color: #000;
-	color: #fff;
+	background-color: #eff;
+	color: #000;
 }
 
 #OsRow6 {
       font-size: 12px;
-	background-color: #234;
-	color: #fff;
+	background-color: #fff;
+	color: #000;
 }
 
 #main td.OsRow2 {

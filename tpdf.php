@@ -3,7 +3,7 @@
   // PDFmonthly.php - Creates the monthly report from the database
   // as a PDF.
 
-include ('includes/class.pdf.php');
+include ('includes/classm.pdf.php');
 
 function DocumentSetup($pdf,$Page_Width,$Page_Height,$Top_Margin,$Bottom_Margin,
 		       $Left_Margin,$Right_Margin,$Month)
@@ -15,7 +15,7 @@ function DocumentSetup($pdf,$Page_Width,$Page_Height,$Top_Margin,$Bottom_Margin,
   $pdf = & new Cpdf($PageSize);
 
   $pdf->addinfo('Author','John J. McDonough ' . "WB8RCR");
-  $pdf->addinfo('Creator','PDFmonthly.php $Revision: 1.1$');
+  $pdf->addinfo('Creator','PDFmonthly.php $Revision: 1.4$');
   $pdf->SetKeywords('ARPSC, ARES, RACES, NTS, Michigan Section');
   $pdf->selectFont('helvetica');
 
@@ -36,9 +36,9 @@ function NextPage($pdf,$PageNumber,$Page_Width,$Page_Height,$Top_Margin,$Bottom_
     }
 
   // Pale purple background on printable area
-  $pdf->SetFillColor(248,244,255);
-  $pdf->Rect($Left_Margin,$Top_Margin,$Page_Width-$Left_Margin-$Right_Margin,
-	     $Page_Height-$Top_Margin-$Bottom_Margin,'F');
+  //$pdf->SetFillColor(248,244,255);
+  //$pdf->Rect($Left_Margin,$Top_Margin,$Page_Width-$Left_Margin-$Right_Margin,
+//	     $Page_Height-$Top_Margin-$Bottom_Margin,'F');
 
   // Top line
   $pdf->SetTextColor(0,0,0);
@@ -159,7 +159,7 @@ include('includes/session.inc');
 $title=_('Michigan Section FSD-212');
 
 include('includes/functions.inc');
-
+date_default_timezone_set('UTC');
 // Remember the launch time
 $starttime = strftime("%A, %B %d %Y, %H:%M");
 
@@ -364,7 +364,7 @@ $pdf->addText($XPos,$YPos,$FontSize,"Requested: " . $starttime . "Z");
 $YPos -= 10;
 $pdf->addText($XPos,$YPos,$FontSize,"Most recent data: " . $maxdate . "E");
 $YPos -= 10;
-$pdf->addText($XPos,$YPos,$FontSize,"\$Revision: 1.3 $ - \$Date: 2013-03-15 10:22:50-04 \$");
+$pdf->addText($XPos,$YPos,$FontSize,"\$Revision: 1.4 $ - \$Date: 2013-05-14 15:32:50-04 \$");
 $YPos -= 10;
 $pdf->addText($XPos,$YPos,$FontSize,"copyright (c) 2013, Michigan Section, American Radio Relay League");
 
