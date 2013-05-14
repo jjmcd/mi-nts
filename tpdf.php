@@ -158,7 +158,7 @@ function Header212($pdf,$Page_Width,$Left_Margin,$Right_Margin,$Yloc)
 include('includes/session.inc');
 $title=_('Michigan Section FSD-212');
 
-include('includes/functions.inc');
+include('includes/miscFunctions.inc');
 date_default_timezone_set('UTC');
 // Remember the launch time
 $starttime = strftime("%A, %B %d %Y, %H:%M");
@@ -209,26 +209,26 @@ NextPage($pdf,$PageNumber,$Page_Width,$Page_Height,$Top_Margin,$Bottom_Margin,
 $pdf->SetDrawColor(192,192,192);
 $pdf->SetLineWidth( 2 );
 $YPos = $Page_Height-$Top_Margin-70;
-$pdf->Line( $Left_Margin, $YPos, $Page_Width-$Left_Margin-$Right_Margin,$YPos);
+$pdf->Line( $Left_Margin, $YPos, $Page_Width, $YPos);
 
 $YPos -= 30;
 /*
 $msg = "ARRL Section: Michigan        Month: " . $Month . "                  ";
-centerText($pdf,$Left_Margin,$Page_Width-$Right_Margin-$Left_Margin,
-	   $YPos,12,$msg);
+centerText($pdf, $Left_Margin, $Page_Width,
+	   $YPos, 12, $msg);
 */
 $YPos -= 25;
-$pdf->Line( $Left_Margin, $YPos, $Page_Width-$Left_Margin-$Right_Margin,$YPos);
+$pdf->Line( $Left_Margin, $YPos, $Page_Width ,$YPos);
 
 $YPos -= 30;
 /*
 $msg = "AMATEUR RADIO EMERGENCY SERVICE";
 $pdf->SelectFont("helvetica-Bold");
-centerText($pdf,$Left_Margin,$Page_Width-$Right_Margin-$Left_Margin,
+centerText($pdf,$Left_Margin,$Page_Width,
 	   $YPos,12,$msg);
 */
 $YPos -= 25;
-$pdf->Line( $Left_Margin, $YPos, $Page_Width-$Left_Margin-$Right_Margin,$YPos);
+$pdf->Line( $Left_Margin, $YPos, $Page_Width, $YPos);
 
 $StartY = $YPos - 40;
 $XPos = $Left_Margin + 10;
